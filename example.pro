@@ -1,5 +1,5 @@
-TEMPLATE = subdirs
-CONFIG  += ordered
-SUBDIRS += itemframework \
-           plugins \
-           starter
+TEMPLATE =  subdirs
+CONFIG   += ordered
+SUBDIRS  += itemframework \
+            plugins \
+            starter
