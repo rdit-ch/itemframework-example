@@ -1,0 +1,3 @@
+[submodule "itemframework"]
+	path = itemframework
+	url = git@gitlab.rdit.ch:rtv/core.git
