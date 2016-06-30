@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>number-emitter/number_emitter.png</file>
+        <file>number-viewer/number_viewer.png</file>
+    </qresource>
+</RCC>
