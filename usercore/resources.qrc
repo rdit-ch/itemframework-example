@@ -1,0 +1,6 @@
+<RCC>
+    <!-- TODO name conflicts -->
+    <qresource prefix="/usercore">
+        <!--<file>livedoc_func.css</file>-->
+    </qresource>
+</RCC>

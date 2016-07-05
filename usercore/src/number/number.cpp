@@ -1,4 +1,4 @@
-#include "number.h"
+#include "number/number.h"
 
 Number::Number(int number, QObject* parent)
     : QObject(parent), _number{number}

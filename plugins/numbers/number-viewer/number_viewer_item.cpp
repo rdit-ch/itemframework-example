@@ -1,7 +1,7 @@
 #include "number_viewer_item.h"
 #include "number_viewer_widget.h"
 
-#include "../number/number.h"
+#include "number/number.h"
 
 NumberViewerItem::NumberViewerItem()
     : AbstractWindowItem("number viewer")

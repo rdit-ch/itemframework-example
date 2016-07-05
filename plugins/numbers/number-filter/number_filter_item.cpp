@@ -1,7 +1,7 @@
 #include "number_filter_item.h"
 #include "number_filter_widget.h"
 
-#include "../number/number.h"
+#include "number/number.h"
 
 NumberFilterItem::NumberFilterItem()
     : AbstractWindowItem("number filter")

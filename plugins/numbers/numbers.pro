@@ -3,7 +3,7 @@ TEMPLATE        =  lib
 CONFIG          += plugin c++11
 SOURCES         += \
                    numbers_factory.cpp \
-                   number/number.cpp \
+#                   number/number.cpp \
                    number-emitter/number_emitter_item.cpp \
                    number-viewer/number_viewer_item.cpp \
                    number-viewer/number_viewer_widget.cpp \
@@ -13,7 +13,7 @@ SOURCES         += \
 
 HEADERS         += \
                    numbers_factory.h \
-                   number/number.h \
+#                   number/number.h \
                    number-emitter/number_emitter_item.h \
                    number-viewer/number_viewer_item.h \
                    number-viewer/number_viewer_widget.h \
@@ -27,8 +27,9 @@ FORMS           += \
 
 RESOURCES       += numbers.qrc
     
-INCLUDEPATH     +=  $$PWD/../../core/include \  #public api
-                    $$PWD/../../privatecore \
+INCLUDEPATH     +=  $$PWD/../../itemframework/core/include \  #public api
+#                    $$PWD/../../privatecore \
+                    $$PWD/../../usercore/include \
                     $$PWD/ui_header
 
 UI_DIR          =  $$PWD/ui_header/
@@ -46,18 +47,22 @@ QMAKE_LFLAGS    += -Wl,--unresolved-symbols=report-all
 
 # Platform dependent stuff
 unix: {
-CONFIG(release, debug|release):   TRAVIZ_BUILDDIR  = $$PWD/../../build/linux/release
-CONFIG(debug, debug|release):     TRAVIZ_BUILDDIR  = $$PWD/../../build/linux/debug
+CONFIG(release, debug|release):   TRAVIZ_BUILDDIR  = $$PWD/../../itemframework/build/linux/release
+CONFIG(debug, debug|release):     TRAVIZ_BUILDDIR  = $$PWD/../../itemframework/build/linux/debug
 
 CORE_LIB         = core
 }
 win32: {
-CONFIG(release, debug|release):   TRAVIZ_BUILDDIR  = $$PWD/../../build/win/release
-CONFIG(debug, debug|release):     TRAVIZ_BUILDDIR  = $$PWD/../../build/win/debug
+CONFIG(release, debug|release):   TRAVIZ_BUILDDIR  = $$PWD/../../itemframework/build/win/release
+CONFIG(debug, debug|release):     TRAVIZ_BUILDDIR  = $$PWD/../../itemframework/build/win/debug
 
 CORE_LIB         = core0
 }
 
+USERCORE_BUILDDIR = $$PWD/../../usercore/build/linux/release
+USERCORE_LIB      = usercore
+
 DESTDIR          = $$TRAVIZ_BUILDDIR/plugins
-LIBS            += -L$$TRAVIZ_BUILDDIR -lprivatecore -l$$CORE_LIB
-PRE_TARGETDEPS  += $$TRAVIZ_BUILDDIR/libprivatecore.a
+#LIBS            += -L$$TRAVIZ_BUILDDIR -lprivatecore -l$$CORE_LIB -L$$USERCORE_BUILDDIR -l$$USERCORE_LIB
+LIBS            += -L$$TRAVIZ_BUILDDIR -l$$CORE_LIB
+#PRE_TARGETDEPS  += $$TRAVIZ_BUILDDIR/libprivatecore.a
