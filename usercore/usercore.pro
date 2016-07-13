@@ -12,21 +12,25 @@ DEFINES     += SOURCE_VERSION=\\\"$$SOURCE_VERSION\\\"
 QMAKE_CXXFLAGS +=  -fvisibility=hidden  #to enforce usage of CORE_EXPORT
 
 SOURCES     +=  \
-                src/number/number.cpp
+                src/number/number.cpp \
+                src/displaywidget/displaywidget.cpp
 
 HEADERS     +=  \
-                include/number/number.h
+                include/number/number.h \
+                include/displaywidget/displaywidget.h
 
-# Normal (not SourceObject related) Forms ahead
-#FORMS       +=  
+FORMS       += \
+                src/displaywidget/displaywidget.ui
 
 RESOURCES   +=  resources.qrc
 
+#DISTFILES   +=  src/res/livedoc_items.html \
+#                src/res/livedoc_func.css
 
-DISTFILES   +=  src/res/livedoc_items.html \
-                src/res/livedoc_func.css
-
-INCLUDEPATH +=  $$PWD/include \         #public api
+INCLUDEPATH +=  \
+                $$PWD/../itemframework/core/include \
+                $$PWD/../itemframework/core/src \
+                $$PWD/include \         #public api
                 $$PWD/src \             #private stuff
 #                $$PWD/../privatecore \  #privatecore stuff
                 $$PWD/ui_header
@@ -42,13 +46,14 @@ UI_DIR       =  $$PWD/ui_header/
 OBJECTS_DIR  =  $$PWD/obj/
 MOC_DIR      =  $$PWD/moc/
 
-# Set build destination folder for manager libary
+# Set build destination folder for user core
 # Linux:
-unix:CONFIG(debug, debug|release):          DESTDIR = $$PWD/build/linux/debug/
-else:unix:CONFIG(release, debug|release):   DESTDIR = $$PWD/build/linux/release/
+PROJ_DIR = $$PWD/../
+unix:CONFIG(debug, debug|release):          DESTDIR = $$PROJ_DIR/build/linux/debug/
+else:unix:CONFIG(release, debug|release):   DESTDIR = $$PROJ_DIR/build/linux/release/
 # Windows:
-win32:CONFIG(debug, debug|release):         DESTDIR = $$PWD/build/win/debug/
-else:win32:CONFIG(release, debug|release):  DESTDIR = $$PWD/build/win/release/
+win32:CONFIG(debug, debug|release):         DESTDIR = $$PROJ_DIR/build/win/debug/
+else:win32:CONFIG(release, debug|release):  DESTDIR = $$PROJ_DIR/build/win/release/
 
 # NOTE: see privatecore.pro for usage
 LIBS += -L$$DESTDIR

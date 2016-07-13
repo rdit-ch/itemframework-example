@@ -4,7 +4,9 @@
 #include <QObject>
 #include <QDebug>
 
-class Number : public QObject
+#include "appcore.h"
+
+class CORE_EXPORT Number : public QObject
 {
     Q_OBJECT
 

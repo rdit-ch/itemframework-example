@@ -3,6 +3,10 @@
 
 #include "number/number.h"
 
+#include "displaywidget/displaywidget.h"
+
+#include <QDebug>
+
 NumberViewerItem::NumberViewerItem()
     : AbstractWindowItem("number viewer")
 {
@@ -13,10 +17,20 @@ NumberViewerItem::NumberViewerItem()
 
     _input = addInput(qMetaTypeId<Number*>(), "number input");
 
-    connect(_input, &ItemInput::dataChanged, [this, widget]() {
+    auto displayWidget = DisplayWidget::instance();
+
+    connect(_input, &ItemInput::dataChanged, [this, widget, displayWidget]() {
         Number* numberPtr = qobject_cast<Number*>(_input->data());
         if (numberPtr != nullptr) {
             widget->addNumber(*numberPtr);
+
+            // Also show in global display widget
+            if (displayWidget != nullptr) {
+                qDebug() << "got display";
+                displayWidget->setText(QString::number((numberPtr->value())));
+            } else {
+                qDebug() << "NOT got display";
+            }
         }
     });
 }
