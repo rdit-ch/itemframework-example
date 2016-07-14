@@ -1,5 +1,6 @@
 #include <QApplication>
 #include "helper/startup_helper.h"
+#include "helper/linker_helper.h"
 
 int main(int argc, char* argv[])
 {
@@ -12,6 +13,7 @@ int main(int argc, char* argv[])
     QApplication::setApplicationVersion("1.0.2.1-abcdefa");
 
     StartupHelper::ensureCoreGetsLinked();
+    LinkerHelper::ensureUserCoreGetsLinked();
 
     return a.exec();
 }

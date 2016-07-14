@@ -12,10 +12,12 @@ DEFINES     += SOURCE_VERSION=\\\"$$SOURCE_VERSION\\\"
 QMAKE_CXXFLAGS +=  -fvisibility=hidden  #to enforce usage of CORE_EXPORT
 
 SOURCES     +=  \
+                src/helper/linker_helper.cpp \
                 src/number/number.cpp \
                 src/displaywidget/displaywidget.cpp
 
 HEADERS     +=  \
+                include/helper/linker_helper.h \
                 include/number/number.h \
                 include/displaywidget/displaywidget.h
 

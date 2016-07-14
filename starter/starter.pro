@@ -5,15 +5,16 @@
     TEMPLATE    =   app
     SOURCES     +=  main.cpp
 
-    INCLUDEPATH += $$PWD/../itemframework/core/include #public api
+    INCLUDEPATH += $$PWD/../itemframework/core/include \ #public api
+                   $$PWD/../usercore/include
 
 # Set LIBS folder
 # Linux:
-    unix:CONFIG(release, debug|release):    LIBS += -L$$PWD/../itemframework/build/linux/release/ -lcore -L $$PWD/../usercore/build/linux/release/ -lusercore
-    else:unix:CONFIG(debug, debug|release): LIBS += -L$$PWD/../itemframework/build/linux/debug/ -lcore -L $$PWD/../usercore/build/linux/debug/ -lusercore
+    unix:CONFIG(release, debug|release):    LIBS += -L$$PWD/../build/linux/release/ -lcore -L$$PWD/../build/linux/release/ -lusercore
+    else:unix:CONFIG(debug, debug|release): LIBS += -L$$PWD/../build/linux/debug/ -lcore -L$$PWD/../build/linux/debug/ -lusercore
 # Windows:
-    win32:CONFIG(release, debug|release):   LIBS += -L$$PWD/../itemframework/build/win/release/ -lcore0 -L $$PWD/../usercore/build/win/release/ -lusercore
-    else:win32:CONFIG(debug, debug|release):LIBS += -L$$PWD/../itemframework/build/win/debug/ -lcore0 -L $$PWD/../usercore/build/win/release/ -lusercore
+    win32:CONFIG(release, debug|release):   LIBS += -L$$PWD/../build/win/release/ -lcore0 -L $$PWD/../build/win/release/ -lusercore
+    else:win32:CONFIG(debug, debug|release):LIBS += -L$$PWD/../build/win/debug/ -lcore0 -L $$PWD/../build/win/release/ -lusercore
 
 # Set DESTDIR folder
 # Linux:
@@ -34,7 +35,7 @@
 # Link against libsegfault
     unix:!mac{
       QMAKE_LFLAGS  += -Wl,--rpath=\\\$\$ORIGIN
-      QMAKE_LFLAGS  += -Wl,--rpath=$$PWD/../itemframework/build/linux/release
+#      QMAKE_LFLAGS  += -Wl,--rpath=$$PWD/../itemframework/build/linux/release
       QMAKE_LFLAGS  += -lSegFault
     }
 

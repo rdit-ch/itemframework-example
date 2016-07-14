@@ -17,19 +17,15 @@ NumberViewerItem::NumberViewerItem()
 
     _input = addInput(qMetaTypeId<Number*>(), "number input");
 
-    auto displayWidget = DisplayWidget::instance();
-
-    connect(_input, &ItemInput::dataChanged, [this, widget, displayWidget]() {
+    connect(_input, &ItemInput::dataChanged, [this, widget]() {
         Number* numberPtr = qobject_cast<Number*>(_input->data());
         if (numberPtr != nullptr) {
             widget->addNumber(*numberPtr);
 
             // Also show in global display widget
+            auto displayWidget = DisplayWidget::instance();
             if (displayWidget != nullptr) {
-                qDebug() << "got display";
                 displayWidget->setText(QString::number((numberPtr->value())));
-            } else {
-                qDebug() << "NOT got display";
             }
         }
     });

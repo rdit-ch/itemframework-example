@@ -22,7 +22,6 @@ public:
     Q_INVOKABLE explicit DisplayWidget(QWidget *parent = 0);
     ~DisplayWidget();
     void setText(QString const& text);
-    static void init();
 
 protected:
     bool postInit();
