@@ -12,7 +12,7 @@ public:
     int modulus() const;
 
 private:
-    int _modulus;
+    int _modulus = 1;
 };
 
 #endif // NUMBER_FILTER_CONFIG_H

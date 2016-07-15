@@ -23,9 +23,13 @@ DisplayWidget::~DisplayWidget()
     delete ui;
 }
 
-void DisplayWidget::setText(const QString& text)
+void DisplayWidget::setText(QString const& text)
 {
-    ui->label->setText(text);
+    if (ui->listWidget->count() >= _maxListItemsCount) {
+        delete ui->listWidget->item(0);
+    }
+
+    ui->listWidget->addItem(text);
 }
 
 bool DisplayWidget::postInit()

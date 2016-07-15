@@ -1,7 +1,7 @@
 #include "number/number.h"
 
-Number::Number(int number, QObject* parent)
-    : QObject(parent), _number{number}
+Number::Number(int number)
+    : _number{number}
 {}
 
 int Number::value() const

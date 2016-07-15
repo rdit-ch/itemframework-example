@@ -29,6 +29,8 @@ protected:
 
 private:
     Ui::DisplayWidget *ui;
+
+    int const _maxListItemsCount = 5;
 };
 
 #endif // DISPLAYWIDGET_H

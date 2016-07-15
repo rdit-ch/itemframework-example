@@ -13,11 +13,13 @@ QMAKE_CXXFLAGS +=  -fvisibility=hidden  #to enforce usage of CORE_EXPORT
 
 SOURCES     +=  \
                 src/helper/linker_helper.cpp \
+                src/number/number_transporter.cpp \
                 src/number/number.cpp \
                 src/displaywidget/displaywidget.cpp
 
 HEADERS     +=  \
                 include/helper/linker_helper.h \
+                include/number/number_transporter.h \
                 include/number/number.h \
                 include/displaywidget/displaywidget.h
 

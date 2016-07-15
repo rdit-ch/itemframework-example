@@ -2,6 +2,7 @@
 #define NUMBER_EMITTER_ITEM_H
 
 #include "item/abstract_item.h"
+#include "number/number_transporter.h"
 
 class NumberEmitterItem : public AbstractItem
 {
@@ -13,7 +14,7 @@ public:
 
 private:
     class ItemOutput* _output = nullptr;
-    class Number* _number = nullptr;
+    class NumberTransporter _numberTransporter;
     class QTimer* _timer = nullptr;
     int _counter = 1;
 };

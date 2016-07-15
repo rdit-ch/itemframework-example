@@ -4,6 +4,7 @@
 #include "item/abstract_window_item.h"
 #include "item/item_input.h"
 #include "number/number.h"
+#include "number/number_transporter.h"
 #include "number_filter_config.h"
 
 class NumberFilterItem : public AbstractWindowItem
@@ -20,8 +21,13 @@ protected:
 private:
     bool check(Number const& number);
 
-    ItemInput*  _input   = nullptr;
-    ItemOutput* _output  = nullptr;
+    ItemInput*         _input    = nullptr;
+    ItemOutput*        _output   = nullptr;
+
+    NumberTransporter* _receiver = nullptr;
+    QMetaObject::Connection _receiverConnection;
+    NumberTransporter  _sender;
+
     NumberFilterConfig _config;
 };
 

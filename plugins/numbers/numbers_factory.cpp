@@ -12,5 +12,7 @@ bool NumbersFactory::init()
     PluginManager::instance()->addPluginComponent<NumberFilterItem, AbstractItem>();
     PluginManager::instance()->addPluginComponent<NumberViewerItem, AbstractItem>();
 
+    AbstractItem::registerConnectorStyle(Qt::blue, qMetaTypeId<NumberTransporter*>());
+
     return true;
 }
