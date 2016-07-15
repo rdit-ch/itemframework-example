@@ -2,6 +2,7 @@ include(../base.pri)
 
 QT              += core gui xml widgets
 CONFIG          += plugin c++11
+TEMPLATE        =  lib
     
 INCLUDEPATH     += \
                    $$PROJECT_ROOT/itemframework/core/include \
@@ -9,6 +10,10 @@ INCLUDEPATH     += \
                    $$PWD/ui_header
 
 QMAKE_LFLAGS    += -Wl,--unresolved-symbols=report-all
+
+UI_DIR          =  $$_PRO_FILE_PWD_/ui_header/
+OBJECTS_DIR     =  $$_PRO_FILE_PWD_/obj/
+MOC_DIR         =  $$_PRO_FILE_PWD_/moc/
 
 # Platform dependent stuff
 BUILDDIR = $$PROJECT_ROOT/build

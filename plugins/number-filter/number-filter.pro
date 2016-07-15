@@ -1,11 +1,5 @@
 include(../plugin.pri)
 
-TEMPLATE        =  lib
-
-UI_DIR          =  $$PWD/ui_header/
-OBJECTS_DIR     =  $$PWD/obj/
-MOC_DIR         =  $$PWD/moc/
-
 SOURCES         += \
                    number_filter_factory.cpp \
                    number_filter_item.cpp \
