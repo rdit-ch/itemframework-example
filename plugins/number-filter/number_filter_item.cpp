@@ -8,7 +8,7 @@ NumberFilterItem::NumberFilterItem()
     : AbstractWindowItem("number filter")
 {
     // Load icon
-    setImage(QImage(":/icons/number-filter/number_filter.png"));
+    setImage(QImage(":/icons/number_filter.png"));
 
     // Set window
     auto widget = static_cast<NumberFilterWidget*>(allocateWindow());

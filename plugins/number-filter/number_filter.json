@@ -1,0 +1,7 @@
+{
+    "name"        : "number-filter",
+    "version"     : "1.0" ,
+    "api-version" : "0.1",
+    "vendor"      : "Example Vendor",
+    "description" : "a simple number filter"
+}
