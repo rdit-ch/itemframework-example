@@ -4,8 +4,6 @@
 #include "helper/startup_helper.h"
 #include "gui/gui_manager.h"
 
-#include <QDebug>
-
 STARTUP_ADD_SINGLETON(DisplayWidget)
 
 DisplayWidget::DisplayWidget(QWidget *parent) :
