@@ -17,6 +17,7 @@ NumberFilterItem::NumberFilterItem()
     // Connect config widget
     connect(widget, &NumberFilterWidget::modulusChanged, [this](int value) {
         this->_config.setModulus(value);
+        emit changed();
     });
 
     // Create input and output

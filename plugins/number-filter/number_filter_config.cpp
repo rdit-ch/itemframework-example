@@ -9,3 +9,13 @@ int NumberFilterConfig::modulus() const
 {
     return _modulus;
 }
+
+bool NumberFilterConfig::operator==(NumberFilterConfig const& other) const
+{
+    return _modulus == other._modulus;
+}
+
+bool NumberFilterConfig::operator!=(NumberFilterConfig const& other) const
+{
+    return !(*this == other);
+}

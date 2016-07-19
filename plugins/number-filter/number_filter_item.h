@@ -10,6 +10,7 @@
 class NumberFilterItem : public AbstractWindowItem
 {
     Q_OBJECT
+    Q_PROPERTY(NumberFilterConfig config MEMBER _config USER true)
 
 public:
     Q_INVOKABLE NumberFilterItem();
