@@ -1,5 +1,5 @@
 # Set project properties
-QT          +=  gui xml sql widgets opengl network
+QT          +=  gui xml sql widgets
 CONFIG      +=  c++11
 TEMPLATE    =   lib
 VERSION     +=  0.1
