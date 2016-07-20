@@ -1,6 +1,6 @@
 #include <QApplication>
 #include "helper/startup_helper.h"
-#include "helper/linker_helper.h"
+#include "usercore.h"
 
 int main(int argc, char* argv[])
 {

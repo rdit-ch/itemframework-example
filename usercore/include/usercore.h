@@ -16,7 +16,7 @@
 
 #define USERCORE_TEST_EXPORT USERCORE_EXPORT
 
-#include "appcore.h"
+#include "usercore.h"
 
 struct USERCORE_EXPORT LinkerHelper
 {

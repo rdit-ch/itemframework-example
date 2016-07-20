@@ -2,10 +2,10 @@
 #define NUMBER_TRANSPORTER_H
 
 #include <QObject>
-#include "appcore.h"
+#include "usercore.h"
 #include "number/number.h"
 
-class CORE_EXPORT NumberTransporter : public QObject
+class USERCORE_EXPORT NumberTransporter : public QObject
 {
     Q_OBJECT
 

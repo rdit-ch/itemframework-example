@@ -5,7 +5,7 @@
     TEMPLATE    =   app
     SOURCES     +=  main.cpp
 
-    INCLUDEPATH += $$PWD/../itemframework/core/include \ #public api
+    INCLUDEPATH += $$PWD/../itemframework/include \ #public api
                    $$PWD/../usercore/include
 
 # Set LIBS folder

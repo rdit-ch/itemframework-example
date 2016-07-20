@@ -3,14 +3,14 @@
 
 #include <QDockWidget>
 
-#include "appcore.h"
+#include "usercore.h"
 #include "helper/singleton.h"
 
 namespace Ui {
 class DisplayWidget;
 }
 
-class CORE_EXPORT DisplayWidget : public QDockWidget, public Singleton<DisplayWidget>
+class USERCORE_EXPORT DisplayWidget : public QDockWidget, public Singleton<DisplayWidget>
 {
     Q_OBJECT
     Q_INTERFACES(AbstractSingleton)

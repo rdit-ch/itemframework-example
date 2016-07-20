@@ -8,13 +8,13 @@ DEFINES     +=  USERCORE_BUILD=1 #used for USERCORE_EXPORT macro switch in userc
 QMAKE_CXXFLAGS +=  -fvisibility=hidden  #to enforce usage of USERCORE_EXPORT
 
 SOURCES     +=  \
-                src/helper/linker_helper.cpp \
+                src/usercore.cpp \
                 src/number/number_transporter.cpp \
                 src/number/number.cpp \
                 src/displaywidget/displaywidget.cpp
 
 HEADERS     +=  \
-                include/helper/linker_helper.h \
+                include/usercore.h \
                 include/number/number_transporter.h \
                 include/number/number.h \
                 include/displaywidget/displaywidget.h
@@ -25,8 +25,8 @@ FORMS       += \
 RESOURCES   +=  resources.qrc
 
 INCLUDEPATH +=  \
-                $$PWD/../itemframework/core/include \
-                $$PWD/../itemframework/core/src \
+                $$PWD/../itemframework/include \
+                $$PWD/../itemframework/src \
                 $$PWD/include \
                 $$PWD/src \
                 $$PWD/ui_header

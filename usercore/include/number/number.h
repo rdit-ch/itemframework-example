@@ -3,9 +3,9 @@
 
 #include <QDebug>
 
-#include "appcore.h"
+#include "usercore.h"
 
-class CORE_EXPORT Number
+class USERCORE_EXPORT Number
 {
 public:
     explicit Number(int number);
