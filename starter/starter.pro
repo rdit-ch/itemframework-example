@@ -10,11 +10,11 @@
 
 # Set LIBS folder
 # Linux:
-    unix:CONFIG(release, debug|release):    LIBS += -L$$PWD/../build/linux/release/ -lcore -L$$PWD/../build/linux/release/ -lusercore
-    else:unix:CONFIG(debug, debug|release): LIBS += -L$$PWD/../build/linux/debug/ -lcore -L$$PWD/../build/linux/debug/ -lusercore
+    unix:CONFIG(release, debug|release):    LIBS += -L$$PWD/../build/linux/release/ -litemframework -L$$PWD/../build/linux/release/ -lusercore
+    else:unix:CONFIG(debug, debug|release): LIBS += -L$$PWD/../build/linux/debug/ -litemframework -L$$PWD/../build/linux/debug/ -lusercore
 # Windows:
-    win32:CONFIG(release, debug|release):   LIBS += -L$$PWD/../build/win/release/ -lcore0 -L $$PWD/../build/win/release/ -lusercore
-    else:win32:CONFIG(debug, debug|release):LIBS += -L$$PWD/../build/win/debug/ -lcore0 -L $$PWD/../build/win/release/ -lusercore
+    win32:CONFIG(release, debug|release):   LIBS += -L$$PWD/../build/win/release/ -litemframework0 -L $$PWD/../build/win/release/ -lusercore
+    else:win32:CONFIG(debug, debug|release):LIBS += -L$$PWD/../build/win/debug/ -litemframework0 -L $$PWD/../build/win/release/ -lusercore
 
 # Set DESTDIR folder
 # Linux:
