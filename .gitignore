@@ -28,6 +28,7 @@ Makefile
 *-build-*
 *.autosave
 *~
+*.stash
 *.backup
 target_wrapper.sh
 uic_wrapper.sh
