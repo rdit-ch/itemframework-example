@@ -67,3 +67,18 @@ bool NumberFilterItem::check(Number const& number)
 
     return false;
 }
+
+NumberFilterConfig NumberFilterItem::config() const
+{
+    return _config;
+}
+
+void NumberFilterItem::setConfig(const NumberFilterConfig& config)
+{
+    _config = config;
+
+    auto widget = static_cast<NumberFilterWidget*>(window());
+    if (widget) {
+        widget->setModulus(config.modulus());
+    }
+}

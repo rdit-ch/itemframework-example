@@ -20,3 +20,8 @@ NumberFilterWidget::~NumberFilterWidget()
 {
     delete _ui;
 }
+
+void NumberFilterWidget::setModulus(int value)
+{
+    _ui->spinBox->setValue(value);
+}

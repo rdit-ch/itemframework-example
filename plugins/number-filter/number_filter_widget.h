@@ -16,6 +16,8 @@ public:
     explicit NumberFilterWidget(class AbstractItem* item, QWidget* parent = nullptr);
     ~NumberFilterWidget();
 
+    void setModulus(int value);
+
 signals:
     void modulusChanged(int value);
 

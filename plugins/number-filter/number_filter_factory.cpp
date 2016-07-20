@@ -9,12 +9,15 @@ NumberFilterFactory::NumberFilterFactory()
 
 bool NumberFilterFactory::init()
 {
+    qRegisterMetaType<NumberFilterConfig>();
+
     // Register NumberFilterItem plugin with item framework.
     PluginManager::instance()->addPluginComponent<NumberFilterItem, AbstractItem>();
 
     // Register custom serializer and deserializer for our NumberFilterConfig
-    // class with the item frameworks serialization mechanism.
-    static char const* const ModulusAttributeName = "modulus";
+    // class with the item frameworks serialization mechanism. This is an
+    // alternative to using the Q_GADGET or Q_OBJECT macros.
+    /*static char const* const ModulusAttributeName = "modulus";
     auto serializer = [](QDomDocument&, QDomElement& element, NumberFilterConfig const& config) {
         element.setAttribute(ModulusAttributeName, config.modulus());
         return true;
@@ -30,7 +33,7 @@ bool NumberFilterFactory::init()
         }
         return config;
     };
-    DomHelper::registerSerializable<NumberFilterConfig>(serializer, deserializer);
+    DomHelper::registerSerializable<NumberFilterConfig>(serializer, deserializer);*/
 
     return true;
 }

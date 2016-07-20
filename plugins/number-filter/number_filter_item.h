@@ -10,11 +10,14 @@
 class NumberFilterItem : public AbstractWindowItem
 {
     Q_OBJECT
-    Q_PROPERTY(NumberFilterConfig config MEMBER _config USER true)
+    Q_PROPERTY(NumberFilterConfig config READ config WRITE setConfig USER true)
 
 public:
     Q_INVOKABLE NumberFilterItem();
     ~NumberFilterItem();
+
+    NumberFilterConfig config() const;
+    void setConfig(NumberFilterConfig const & config);
 
 protected:
     QMainWindow* allocateWindow() override;
