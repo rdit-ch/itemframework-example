@@ -3,13 +3,9 @@ QT          +=  gui xml sql widgets opengl network
 CONFIG      +=  c++11
 TEMPLATE    =   lib
 VERSION     +=  0.1
-DEFINES     +=  API_VERSION=\\\"$$VERSION\\\" #Version of the Public api (equal to lib version^^)
-                CORE_BUILD=1 #used for CORE_EXPORT macro switch in appcore.h
+DEFINES     +=  USERCORE_BUILD=1 #used for USERCORE_EXPORT macro switch in usercore.h
 
-SOURCE_VERSION = $$system(git describe --always --tags) #Source Code version
-DEFINES     += SOURCE_VERSION=\\\"$$SOURCE_VERSION\\\"
-
-QMAKE_CXXFLAGS +=  -fvisibility=hidden  #to enforce usage of CORE_EXPORT
+QMAKE_CXXFLAGS +=  -fvisibility=hidden  #to enforce usage of USERCORE_EXPORT
 
 SOURCES     +=  \
                 src/helper/linker_helper.cpp \
@@ -28,23 +24,12 @@ FORMS       += \
 
 RESOURCES   +=  resources.qrc
 
-#DISTFILES   +=  src/res/livedoc_items.html \
-#                src/res/livedoc_func.css
-
 INCLUDEPATH +=  \
                 $$PWD/../itemframework/core/include \
                 $$PWD/../itemframework/core/src \
-                $$PWD/include \         #public api
-                $$PWD/src \             #private stuff
-#                $$PWD/../privatecore \  #privatecore stuff
+                $$PWD/include \
+                $$PWD/src \
                 $$PWD/ui_header
-
-win32 {
-    INCLUDEPATH +=c:/ginac/include
-    LIBS+= -Lc:/ginac/lib
-}
-
-LIBS+= -lcln
 
 UI_DIR       =  $$PWD/ui_header/
 OBJECTS_DIR  =  $$PWD/obj/
@@ -59,6 +44,4 @@ else:unix:CONFIG(release, debug|release):   DESTDIR = $$PROJ_DIR/build/linux/rel
 win32:CONFIG(debug, debug|release):         DESTDIR = $$PROJ_DIR/build/win/debug/
 else:win32:CONFIG(release, debug|release):  DESTDIR = $$PROJ_DIR/build/win/release/
 
-# NOTE: see privatecore.pro for usage
 LIBS += -L$$DESTDIR
-#-lprivatecore

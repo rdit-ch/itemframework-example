@@ -1,4 +1,5 @@
-#include "helper/linker_helper.h"
+#include "usercore.h"
 
 void LinkerHelper::ensureUserCoreGetsLinked()
 {}
+
