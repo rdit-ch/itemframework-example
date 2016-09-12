@@ -1,4 +1,4 @@
-include(../itemframework/pri/usercore.pri)
+include(usercore.pri)
 
 SOURCES     +=  \
                 src/usercore.cpp \
