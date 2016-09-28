@@ -16,8 +16,6 @@
 
 #define USERCORE_TEST_EXPORT USERCORE_EXPORT
 
-#include "usercore.h"
-
 struct USERCORE_EXPORT LinkerHelper
 {
     static void ensureUserCoreGetsLinked();
