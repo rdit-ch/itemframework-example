@@ -16,7 +16,7 @@ class USERCORE_EXPORT DisplayWidget : public QDockWidget, public Singleton<Displ
     Q_INTERFACES(AbstractSingleton)
 
     Q_CLASSINFO("guiModule", "true")
-    Q_CLASSINFO("dependsOn", "Gui_Manager")
+    Q_CLASSINFO("dependsOn", "GuiManager")
 
 public:
     Q_INVOKABLE explicit DisplayWidget(QWidget *parent = 0);

@@ -13,7 +13,7 @@ DisplayWidget::DisplayWidget(QWidget *parent) :
     ui->setupUi(this);
 
     // Add this Widget to left area of the main window.
-    Gui_Manager::instance()->include_In_Layout(this, Window_Layout::Left_Area);
+    GuiManager::instance()->addWidget(this, WidgetArea::Left);
 }
 
 DisplayWidget::~DisplayWidget()
